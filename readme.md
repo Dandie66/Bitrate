@@ -9,9 +9,10 @@ The program's counts out the video bitrate of target filsize without the audio c
 This might help you to add data to various programs, like Handbreake for example.
 ```
 __USAGE:__
+
 Run the command, and type `python bitrate.py` as syntax.
 
-Syntax:
+__SYNTAX:__
 ```
 python bitrate.py <movie length minutes> <movie length sec> <target filesize in megabyte>
 <count of audio channels> <first audio bitrate> |second audio bitrate etc|...
