@@ -5,19 +5,16 @@ channels=[]
 audio_output_filesize = 0
 
 if sys.argv[1] == "--help" or sys.argv[1] == "":
-    print "<movie length minutes> <movie length sec> <target filesize in megabyte> <count of audio channels (max 2)> <first audio bitrate> <second audio bitrate>"
+    print "<movie length minutes> <movie length sec> <target filesize in megabyte> <count of audio channels> <first audio bitrate> <second audio bitrate> etc..."
 else:
     movie_length    = (float(sys.argv[1])*60) + float(sys.argv[2])
     movie_filesize    = float(sys.argv[3])*8
     audio_channels    = float(sys.argv[4])
     for i in range(5,int(5+audio_channels)):
         try:
-            channels.append(sys.argv[i])
+            audio_output_filesize += (movie_length*float(sys.argv[i]))/1024
         except IndexError:
-            break
-
-    for channel in channels:
-        audio_output_filesize += (movie_length*float(channel))/1024
+            pass
 
     if movie_filesize < audio_output_filesize:
         print '\033[1m'+"That file size is too small for a video encoding, the audio size is by itself %.0fmb" % (audio_output_filesize/8)
