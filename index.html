@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Bitrate Optimizer by Dandie66</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/Dandie66/Bitrate">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/Dandie66/Bitrate/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/Dandie66/Bitrate/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Bitrate Optimizer</h1>
+          <p>Calculate optimal bitrate for your movie</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/Dandie66">Dandie66</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Video Bitrate Optimizer</h1>
+
+<p><strong>DESCRIPTION:</strong></p>
+
+<p>This is a program, it helps you to calculate the optimal bitrate for the target filesize.
+You can add the movie length, target filesize, count of audio channels and the bitrate of channels.
+The program's counts out the video bitrate of target filsize without the audio channels.
+This might help you to add data to various programs, like Handbreake for example.</p>
+
+<p><strong>USAGE:</strong></p>
+
+<p>Run the command, and type <code>python bitrate.py</code> as syntax.</p>
+
+<p><strong>SYNTAX:</strong></p>
+
+<pre><code>python bitrate.py &lt;movie length minutes&gt; &lt;movie length sec&gt; 
+&lt;target filesize in megabyte&gt; &lt;count of audio channels&gt; 
+&lt;first audio bitrate&gt; |second audio bitrate etc|...
+</code></pre>
+
+<p>movie length minutes    --&gt; The movie length in minutes</p>
+
+<p>movie length sec        --&gt; The left-over seconds of movie length without minutes</p>
+
+<p>target filesize         --&gt; The size of file you would like to create</p>
+
+<p>count of audio channels --&gt; The count of audio channels what you would like to encode beside the movie</p>
+
+<p>audio bitrate           --&gt; List of bitrate of any channels what you would like to encode</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
