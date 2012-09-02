@@ -16,7 +16,7 @@ try:
         movie_length    = (float(sys.argv[1])*60) + float(sys.argv[2])
         movie_filesize    = float(sys.argv[3])*8
         audio_channels    = float(sys.argv[4])
-        for i in range(5,int(5+audio_channels)):
+        for i in range(5,int(4+audio_channels)):
             try:
                 audio_output_filesize += (movie_length*float(sys.argv[i]))/1024
             except IndexError:
