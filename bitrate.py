@@ -8,7 +8,7 @@ import sys
 from display import help, tooSmall, lowBitrate, optimalBitrate
 
 channels, audio_output_filesize = [], 0
-
+#Todo: make this bitrate.py, the program starter and put everything in different methods and files.
 try:
     if sys.argv[1] == "--help":
         help()
