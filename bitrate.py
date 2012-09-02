@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# coding=UTF-8
 import sys
 
 # Csak hogy értsd mi ez az import, from display = a display.py-ből, importálja be a help, tooSmall stb. függvényeket.
