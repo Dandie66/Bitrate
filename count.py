@@ -18,3 +18,5 @@ def getTime(time):
 def getBitratesCS(bitrates):
     bitrates = bitrates.split(",")
     return bitrates
+
+def CountingRate(sec, size, ch, bit):

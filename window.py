@@ -33,13 +33,13 @@ def countBitrate():
     filesize = movie_size.get()
     channels = audio_channels.get()
     channel_bitrate = getBitratesCS(channelEntry.get())
+
     # it's an array, have to rewrite the audio counter part.
     #todo: do the counting and render the return value as
+    CountingRate(seconds,filesize,channels,channel_bitrate)
     OptimalBitrate.set(862)
-
 b = Button(mainWindow, text="Count", command=countBitrate)
 b.pack()
-
 
 mainWindow.mainloop()
 
