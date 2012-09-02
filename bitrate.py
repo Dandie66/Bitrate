@@ -1,12 +1,7 @@
 #!/usr/bin/python
 # coding=UTF-8
 import sys
-
-# Csak hogy értsd mi ez az import, from display = a display.py-ből, importálja be a help, tooSmall stb. függvényeket.
-# Ha megértetted hogy müködik, akkor majd írd át *-ra az import utánit, az az import minden.
-# Próbálom picit objektum orientáltabbá tenni, hogy könyebb legyen ketten beledolgozni :)
-# Még szétlehetne jobban szedni, de nem akarlak annyira megzavarni, így kapásból.
-from display import help, tooSmall, lowBitrate, optimalBitrate
+from display import *
 
 channels, audio_output_filesize = [], 0
 #Todo: make this bitrate.py, the program starter and put everything in different methods and files.
