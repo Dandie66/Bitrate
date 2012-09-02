@@ -19,13 +19,10 @@ try:
                 audio_output_filesize += (5+audio_channels-i)*(movie_length*float(sys.argv[i-1]))/1024
                 break
 
-        if movie_filesize < audio_output_filesize:
-            tooSmall(audio_output_filesize/8)
+        video_bitrate = ( (movie_filesize-audio_output_filesize)/movie_length)*1024
+        if video_bitrate < 750:
+            lowBitrate(video_bitrate)
         else:
-            video_bitrate = ( (movie_filesize-audio_output_filesize)/movie_length)*1024
-            if video_bitrate < 750:
-                lowBitrate(video_bitrate)
-            else:
-                optimalBitrate(video_bitrate)
+            optimalBitrate(video_bitrate)
 except IndexError:
     help()
