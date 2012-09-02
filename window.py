@@ -1,47 +1,44 @@
 from Tkinter import *
-
-def testing(**options):
-    print "geezus"
+from count import getTime, getBitratesCS
 
 mainWindow = Tk()
 mainWindow.resizable(0,0)
+mainWindow.geometry('300x300')
 
-audioChannels=IntVar()
-audioChannels.set(1)
-audioChannels.trace("w",testing)
 OptimalBitrate=IntVar()
 OptimalBitrate.set(0)
 
-label = Label(mainWindow, text="Video bitrate optimizer", bd=3, fg="red").grid(row=0)
+label = Label(mainWindow, text="Video bitrate optimizer", fg="red").pack()
 
-Label(mainWindow, text="Length", anchor=CENTER).grid(row=1)
+Label(mainWindow, text="Length (h:m:s)", anchor=CENTER).pack()
 movie_length=Entry(mainWindow)
-movie_length.grid(row=1, column=1)
+movie_length.pack()
 
-Label(mainWindow, text="Size").grid(row=2)
+Label(mainWindow, text="Size (mb)").pack()
 movie_size=Entry(mainWindow)
-movie_size.grid_columnconfigure(0,weight=10)
-movie_size.grid(row=2, column=1)
+movie_size.pack()
 
-Label(mainWindow, text="Channels").grid(row=3)
-audio_channels=Entry(mainWindow,textvariable=audioChannels)
-audio_channels.grid(row=3, column=1)
+Label(mainWindow, text="Channels (how many)").pack()
+audio_channels=Entry(mainWindow,text=1)
+audio_channels.pack()
 
-Label(mainWindow, text="Channel").grid(row=4)
-audio_channel=Entry(mainWindow)
-audio_channel.grid(row=4, column=1)
+Label(mainWindow, text='Channel (seperated by ",")').pack()
+channelEntry = Entry(mainWindow)
+channelEntry.pack()
 
-Label(mainWindow, text="The optimal bitrate is: ").grid(row=5)
-Label(mainWindow, textvariable=OptimalBitrate).grid(row=5, column=1)
-Label(mainWindow, text="kbps").grid(row=5, column=2)
+Label(mainWindow, bg="black", fg="red", textvariable=OptimalBitrate).pack()
 
-def callback():
+def countBitrate():
+    seconds = getTime(movie_length.get())
+    filesize = movie_size.get()
+    channels = audio_channels.get()
+    channel_bitrate = getBitratesCS(channelEntry.get())
+    # it's an array, have to rewrite the audio counter part.
     #todo: do the counting and render the return value as
-    # OptimalBitrate.set('returnvalue')
-    pass
+    OptimalBitrate.set(862)
 
-b = Button(mainWindow, text="Count", command=callback)
-b.grid(row=6)
+b = Button(mainWindow, text="Count", command=countBitrate)
+b.pack()
 
 
 mainWindow.mainloop()
