@@ -16,6 +16,7 @@ else:
         try:
             audio_output_filesize += (movie_length*float(sys.argv[i]))/1024
         except IndexError:
+            audio_output_filesize += (5+audio_channels-i)*(movie_length*float(sys.argv[i-1]))/1024
             break
 
     if movie_filesize < audio_output_filesize:
