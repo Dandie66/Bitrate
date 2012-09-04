@@ -2,9 +2,9 @@ def help():
     """ Display a help message """
     print "<movie length minutes> <movie length sec> <target filesize in megabyte> <count of audio channels> <first audio bitrate> <second audio bitrate> etc..."
 
-def tooSmall(size):
+def tooSmall():
     """ Display a message that the audio size is bigger then the preferred video size """
-    print "-- That file size is too small for a video encoding, the audio size is by itself %.0fmb" % (size)
+    print "-- That file size is too small for a video encoding, the audio size is by itself"
 
 def lowBitrate(bitrate):
     """ Display a message that the video quality would be low for this size """
